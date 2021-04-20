@@ -1,0 +1,26 @@
+title: "Loqu: An Interface for Linked Data Cubes"
+author:
+  - name: Alex Kreidler
+
+repository: https://github.com/alexkreidler/loqu-paper/
+
+identifier:
+  - https://alexkreidler.github.io/loqu-paper/
+
+canonical: https://alexkreidler.github.io/loqu-paper/
+
+license:
+  label: CC BY 4.0
+  uri: https://creativecommons.org/licenses/by/4.0/
+
+created: 2020-04-05
+
+keywords:
+  - Linked Data
+  - Data Cubes
+  - SDMX
+  # or label: uri:
+
+bibliography: ../biblio.bib
+csl: "https://www.zotero.org/styles/springer-lecture-notes-in-computer-science"
+link-citations: true

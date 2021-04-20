@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
+  <head>
+    <meta charset="utf-8" />
+    <title>$title$</title>
+    
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Load from Cloudflare CDN -->
+    <link href="https://rawcdn.githack.com/linkeddata/dokieli/790c682443bf696cefc4ed49e872c66e6a9dc629/media/css/basic.css" media="all" rel="stylesheet alternate" title="Basic" />
+    <link href="https://rawcdn.githack.com/linkeddata/dokieli/790c682443bf696cefc4ed49e872c66e6a9dc629/media/css/acm.css" media="all" rel="stylesheet alternate" title="ACM" />
+    <link href="https://rawcdn.githack.com/linkeddata/dokieli/790c682443bf696cefc4ed49e872c66e6a9dc629/media/css/lncs.css" media="all" rel="stylesheet" title="LNCS" />
+
+
+    <link href="https://rawcdn.githack.com/linkeddata/dokieli/790c682443bf696cefc4ed49e872c66e6a9dc629/media/css/dokieli.css" media="all" rel="stylesheet" />
+    <script src="https://rawcdn.githack.com/linkeddata/dokieli/790c682443bf696cefc4ed49e872c66e6a9dc629/scripts/dokieli.js"></script>
+
+    <meta name="generator" content="pandoc" />
+    $if(canonical)$
+    <link rel="canonical" href="$canonical$" />
+    $endif$
+  </head>
+
+  <body about="" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# schema: http://schema.org/" typeof="schema:CreativeWork">
+
+    <main>
+      <article about="" typeof="schema:ScholarlyArticle">
+        
+        <h1 property="schema:name">$title$</h1>
+
+        $if(subtitle)$
+        <p id="subtitle">$subtitle$</p>
+        $endif$
+
+        $if(author)$
+        <div id="authors">
+          <dl id="author-name">
+            <dt>Authors</dt>
+            <dd>
+             $for(author)$
+              <span about="" rel="schema:creator schema:publisher schema:author">
+                <a about="$author.link$" typeof="schema:Person" rel="schema:url" property="schema:name" href="$author.link$">$author.name$</a>
+              </span>
+             $endfor$
+            </dd>
+          </dl>
+          <ul id="author-org">
+           $for(author)$
+            <li>$author.affiliation$</li>
+           $endfor$
+          </ul>
+          <ul id="author-email">
+           $for(author)$
+            <li><a about="$author.link$" rel="schema:email" href="mailto:$author.email$">$author.email$</a></li>
+           $endfor$
+          </ul>
+        </div>
+        $endif$
+
+        $if(created)$
+        <dl id="document-published">
+          <dt>Published</dt>
+          <dd>$created$</dd>
+        </dl>
+        $endif$
+
+        $if(date)$
+        <dl id="document-modified">
+          <dt>Modified</dt>
+          <dd>
+            $date$
+            $if(version)$ (version $version$)$endif$
+          </dd>
+        </dl>
+        $endif$
+
+        $if(identifier)$
+        <dl id="document-identifier">
+          <dt>Identifier</dt>
+          <dd>
+          $for(identifier)$
+            <a href="$identifier$">$identifier$</a>
+            $sep$,
+          $endfor$
+          </dd>
+        </dl>
+        $endif$
+
+        $if(status)$
+        <dl id="document-status">
+          <dt>Status</dt>
+          <dd>$status$</dd>
+        </dl>
+        $endif$
+
+        $if(repository)$
+        <dl id="document-see-also">
+          <dt>Repository</dt>
+          <dd><a href="$repository$">$repository$</a></dd>
+        </dl>
+        $endif$
+
+        $if(feedback)$
+        <dl id="document-feedback">
+          <dt>Feedback</dt>
+          $for(feedback)$
+          <dd><a href="$feedback.url$">$feedback.title$</a></dd>
+          $endfor$
+        </dl>
+        $endif$
+
+        $if(license)$
+        <dl id="document-license">
+          <dt>License</dt>
+          <dd><a href="$license.uri$">$license.label$</a></dd>
+        </dl>
+        $endif$
+
+
+        <div id="content">
+
+          $if(abstract)$
+          <section id="abstract">
+            <h2>Abstract</h2>
+            <div datatype="rdf:HTML" property="schema:abstract">
+              $abstract$
+            </div>
+          </section>
+          $endif$
+
+          $if(ccsdesc)$
+          <section id="categories-and-subject-descriptors">
+            <h2>Categories and Subject Descriptors</h2>
+            <div>
+              <ul>
+               $for(ccsdesc)$
+                <li>
+                 <a href="$ccsdesc.url$">CCS</a>
+                 $ccsdesc.class$ 
+                </li>
+               $endfor$
+              </ul>
+            </div>
+          </section>
+          $endif$
+
+          $if(keywords)$
+          <section id="keywords">
+            <h2>Keywords</h2>
+            <div>
+              <ul rel="schema:about">
+               $for(keywords)$
+                <li>$if(keywords.uri)$
+                  <a class="wikidata-link" href="$keywords.uri$">$keywords.label$</a>
+                  $else$$keywords$$endif$</li>
+               $endfor$
+              </ul>
+            </div>
+          </section>
+          $endif$
+
+$body$
+
+        </div>
+      </article>      
+    </main>
+
+  </body>
+$for(include-after)$
+$include-after$
+$endfor$
+</html>
