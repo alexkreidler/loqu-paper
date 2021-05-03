@@ -2,7 +2,9 @@
 
 # set -euxo
 
-wget -O biblio.bib http://127.0.0.1:23119/better-bibtex/export/collection?/1/Loqu.biblatex
+if [[ "$1" == "-b" ]]; then
+    wget -O biblio.bib http://127.0.0.1:23119/better-bibtex/export/collection?/1/Loqu.biblatex
+fi
 
 pandoc --metadata-file=./metadata.yml "--metadata=abstract:$(cat ./content/abstract.md)" \
     --bibliography=./biblio.bib \

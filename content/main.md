@@ -61,7 +61,7 @@ Users can also explore by linked entities. Currently the only supported option i
 The Explore page for countries can display a list of each country with its name, flag, ISO country code, or a 2D or 3D map of the countries (using the deck.gl library). It also can show the number of datasets that are linked. Once a user has selected a country, the country details page displays pagination to show the datasets linked to that country.
 
 
-![Exploring by Countroes](../images/countries.png)
+![Exploring by Countries](../images/countries.png)
 
 #### Dataset View
 
